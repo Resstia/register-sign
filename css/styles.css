@@ -1,0 +1,189 @@
+
+:root {
+    --color-principal: #C8A96E;
+    --color-error:     #8B2020;
+    --color-exitoso:   #4A7C59;
+    --color-fondo:     #2C1810;
+}
+
+
+body {
+    font-family: 'Georgia', serif;
+    background: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* contenedor principal */
+.contenedor-principal {
+    background: rgba(200, 169, 110, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 169, 110, 0.3);
+    width: 350px;
+    color: #F5E6C8;
+}
+
+/* ── Título ── */
+h2 {
+    color: #C8A96E;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.datos-entrada {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    color: #E8D5A3;
+    letter-spacing: 1px;
+    
+}
+
+/* input */
+input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(26, 18, 8, 0.6);
+    border: 1px solid rgba(200, 169, 110, 0.3);
+    border-radius: 4px;
+    color: #F5E6C8;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: 'Georgia', serif;
+}
+
+input::placeholder {
+    color: rgba(245, 230, 200, 0.3);
+}
+
+
+input:focus {
+    outline: none;
+    border-color: var(--color-principal);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--color-error);
+}
+
+
+.mensaje-error {
+    color: var(--color-error);
+    font-size: 0.75rem;
+    display: none;
+}
+
+input:invalid:not(:placeholder-shown) + .mensaje-error {
+    display: block;
+}
+
+/* boton envio */
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--color-principal);
+    border: none;
+    color: #2C1810;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background: #D4915A;
+}
+
+/* ── Wrapper input + botón ojo ── */
+.input-password-cubierta {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-password-cubierta input {
+    padding-right: 42px;
+}
+
+.btn-revelar {
+    position: absolute;
+    right: 8px;
+    width: auto;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgba(200, 169, 110, 0.5);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.btn-revelar:hover {
+    background: transparent;
+}
+
+
+#errorConfirmar {
+    display: none;
+}
+
+#errorConfirmar.visible {
+    display: block;
+}
+
+#errorInicio {
+    display: none;
+}
+
+#errorInicio.visible {
+    display: block;
+}
+
+/* ── Barra de nivel de seguridad ── */
+.nivel-seguridad {
+    height: 4px;
+    width: 0%;
+    background: var(--color-error);
+    margin-top: 5px;
+    transition: 0.5s;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+
+.form-oculto {
+    display: none;
+}
+
+
+.cambiar-form {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: rgba(245, 230, 200, 0.5);
+}
+
+.cambiar-form a {
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+

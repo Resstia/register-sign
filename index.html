@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller: Formulario Pro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+
+        <!-- ── Formulario de Registro ── -->
+        <form id="formulario-registro" novalidate>
+            <h2>Crea tu Cuenta</h2>
+
+            <div class="datos-entrada">
+                <label for="nombreusuario">Nombre de Usuario</label>
+                <input type="text" id="nombreusuario" placeholder="Ej: dev_master" required minlength="4">
+                <span class="mensaje-error">El usuario debe tener al menos 4 caracteres.</span>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" placeholder="tu@correo.com" required>
+                <span class="mensaje-error">Ingresa un correo electrónico válido.</span>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="contraseña">Contraseña</label>
+                <div class="input-password-cubierta">
+                    <input type="password" id="contraseña" placeholder="••••••••" required
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                    <button type="button" class="btn-revelar" id="togglePassword">👁</button>
+                </div>
+                <span class="mensaje-error">Mínimo 8 caracteres, incluyendo letras y números.</span>
+                <div class="nivel-seguridad" id="nivelseguridad"></div>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="confirmarPassword">Confirmar Contraseña</label>
+                <div class="input-password-cubierta">
+                    <input type="password" id="confirmarPassword" placeholder="••••••••" required>
+                    <button type="button" class="btn-revelar" id="toggleConfirm">👁</button>
+                </div>
+                <span class="mensaje-error" id="errorConfirmar">Las contraseñas no coinciden.</span>
+            </div>
+
+            <button type="submit" id="botonenviar">Registrarme</button>
+            <p class="cambiar-form">¿Ya tienes cuenta? <a href="#" id="irAInicio">Inicia sesión</a></p>
+        </form>
+
+        <!-- ── Formulario de Inicio de Sesión ── -->
+        <form id="formulario-inicio" class="form-oculto" novalidate>
+            <h2>Iniciar Sesión</h2>
+
+            <div class="datos-entrada">
+                <label for="inicioUsuario">Nombre de Usuario</label>
+                <input type="text" id="inicioUsuario" placeholder="Ej: dev_master" required>
+                <span class="mensaje-error">Ingresa tu nombre de usuario.</span>
+            </div>
+
+            <div class="datos-entrada">
+                <label for="inicioPassword">Contraseña</label>
+                <div class="input-password-cubierta">
+                    <input type="password" id="inicioPassword" placeholder="••••••••" required>
+                    <button type="button" class="btn-revelar" id="toggleInicioPassword">👁</button>
+                </div>
+                <span class="mensaje-error" id="errorInicio">Usuario o contraseña incorrectos.</span>
+            </div>
+
+            <button type="submit" id="botonInicio">Ingresar</button>
+            <p class="cambiar-form">¿No tienes cuenta? <a href="#" id="irARegistro">Regístrate</a></p>
+        </form>
+
+    </div>
+</body>
+
+</html>
