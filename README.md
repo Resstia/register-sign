@@ -1,5 +1,6 @@
-##Daniel Garrido y Luis Gomez
+
 # Formulario de Registro Inteligente y Seguro
+##Daniel Garrido y Luis Gomez
 
 Proyecto desarrollado con **HTML**, **CSS** y **JavaScript** como parte de un taller práctico de desarrollo web frontend.
 
